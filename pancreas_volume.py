@@ -2,11 +2,10 @@ import numpy as np
 import os
 import pydicom
 
-
-N = 30#82
-W = 512
-H = 512
-path1 = 'DOI'
+N = 1       #病人個數
+W = 512     #影像寬
+H = 512     #影像長
+path1 = 'CT'
 path2 = 'images'
 if not os.path.exists(path2):
     os.makedirs(path2)
@@ -14,9 +13,10 @@ if not os.path.exists(path2):
 for n in range(N):
     volumeID = '{:0>4}'.format(n + 1)
     print('Processing File ' + volumeID)
-    filename1 = 'PANCREAS_' + volumeID
+    filename1 = 'Patient_' + volumeID
     directory1 = os.path.join(path1, filename1)
     filename2 = volumeID + '.npy'
+
     for path_, _, file_ in os.walk(directory1):
         L = len(file_)
         if L > 0:
