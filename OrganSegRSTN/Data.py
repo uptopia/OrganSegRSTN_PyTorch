@@ -14,18 +14,18 @@ class DataLayer(data.Dataset):
 		self.organ_ID = organ_ID
 
 		image_list = open(training_set_filename(current_fold), 'r').read().splitlines()
-		self.training_image_set = np.zeros((len(image_list)), dtype = np.int)
+		self.training_image_set = np.zeros((len(image_list)), dtype = int)
 		for i in range(len(image_list)):
 			s = image_list[i].split(' ')
 			self.training_image_set[i] = int(s[0])
 		slice_list = open(list_training[plane], 'r').read().splitlines()
 		self.slices = len(slice_list)
-		self.image_ID = np.zeros((self.slices), dtype = np.int)
-		self.slice_ID = np.zeros((self.slices), dtype = np.int)
+		self.image_ID = np.zeros((self.slices), dtype = int)
+		self.slice_ID = np.zeros((self.slices), dtype = int)
 		self.image_filename = ['' for l in range(self.slices)]
 		self.label_filename = ['' for l in range(self.slices)]
 		self.average = np.zeros((self.slices))
-		self.pixels = np.zeros((self.slices), dtype = np.int)
+		self.pixels = np.zeros((self.slices), dtype = int)
 
 		for l in range(self.slices):
 			s = slice_list[l].split(' ')

@@ -34,7 +34,8 @@ if __name__ == '__main__':
 	if not os.path.exists(snapshot_path):
 		os.makedirs(snapshot_path)
 	
-	FCN_weights = os.path.join(pretrained_model_path, 'fcn8s_from_caffe.pth')
+	FCN_weights = os.path.join(pretrained_model_path, 'fcn8s-heavy-pascal.pth') #'fcn8s_from_caffe.pth')
+	print('FCN_weights: ', FCN_weights)
 	if not os.path.isfile(FCN_weights):
 		raise RuntimeError('Please Download <http://drive.google.com/uc?id=0B9P1L--7Wd2vT0FtdThWREhjNkU> from the Internet ...')
 

@@ -56,12 +56,12 @@ for i in range(total_samples):
 		if not os.path.exists(label_directory_):
 			os.makedirs(label_directory_)
 		print('    Slicing data: ' + str(time.time() - start_time) + ' second(s) elapsed.')
-		sum_ = np.zeros((slice_number, organ_number + 1), dtype = np.int)
-		minA = np.zeros((slice_number, organ_number + 1), dtype = np.int)
-		maxA = np.zeros((slice_number, organ_number + 1), dtype = np.int)
-		minB = np.zeros((slice_number, organ_number + 1), dtype = np.int)
-		maxB = np.zeros((slice_number, organ_number + 1), dtype = np.int)
-		average = np.zeros((slice_number), dtype = np.float)
+		sum_ = np.zeros((slice_number, organ_number + 1), dtype = int)
+		minA = np.zeros((slice_number, organ_number + 1), dtype = int)
+		maxA = np.zeros((slice_number, organ_number + 1), dtype = int)
+		minB = np.zeros((slice_number, organ_number + 1), dtype = int)
+		maxB = np.zeros((slice_number, organ_number + 1), dtype = int)
+		average = np.zeros((slice_number), dtype = np.float64)
 		for j in range(0, slice_number):
 			image_filename_ = os.path.join( \
 				image_path_[plane], image_filename[i], '{:0>4}'.format(j) + '.npy')
